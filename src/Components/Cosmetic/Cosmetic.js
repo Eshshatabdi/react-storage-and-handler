@@ -1,10 +1,11 @@
 import React from 'react';
+import { addCart } from '../../Utilities/Fakedb';
 import './Cosmetic.css';
 
 const Cosmetic = (props) => {
     const { name, price, id } = props.cosmetic
     const addToCart = (id) => {
-        console.log(id)
+        addCart(id)
 
     }
     return (
