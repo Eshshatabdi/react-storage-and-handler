@@ -29,4 +29,25 @@ const addCart = id => {
 
 
 }
-export { addCart };
+const removeFromDb = id => {
+    // ekhane prothom e dekhte hobe je shopping cart er moddhe ase ki eta dekhar por condition dite hoy
+    const storedCart = localStorage.getItem('shopping-cart')
+    // ekhane 2 ta jinish dekhte hobe etake object e nite hone JSON.paese diye pore shooping cart e ei id ta ase ki eta dekhte hoy tokhn abar local ta set kore dibo
+    if (storedCart) {
+        const shoppingCart = JSON.parse(storedCart)
+        if (id in shoppingCart) {
+            delete shoppingCart[id]
+            localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart))
+
+        }
+    }
+
+
+}
+const deleteShoppingCart = () => {
+    localStorage.removeItem('shopping-cart')
+}
+export {
+    addCart, removeFromDb,
+    deleteShoppingCart
+};
