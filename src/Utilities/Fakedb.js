@@ -7,13 +7,11 @@ const addCart = id => {
     else {
         shoppingCart = {};
     }
-
-    // const quantity = localStorage.getItem('shopping-cart');
     const quantity = shoppingCart[id];
     if (quantity) {
         const newQuantity = parseInt(quantity) + 1
         shoppingCart[id] = newQuantity;
-        // localStorage.setItem(id, newQuantity)
+
 
 
     }
